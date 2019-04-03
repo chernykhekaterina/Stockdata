@@ -1,0 +1,28 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title>Data</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+
+    <body>
+
+      <form id='form1' method="POST" action="/numbers">
+
+     <fieldset>
+        <legend>Selected Stock</legend>
+
+        <select name='symbol' id = 'symbol'>
+            {% for symbol in symbol_list %}
+            <option value= "{{symbol}}" SELECTED >
+            {{symbol}}</option>
+            {% endfor %}
+
+        </select>
+
+      </fieldset>
+      <input type="submit" value="Submit" id="submit"/>
+
+ </body>
+ </html>

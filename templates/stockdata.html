@@ -1,0 +1,26 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title>Data</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+
+    <fieldset>
+       <legend>Selected Stock is {{symbol}}.</legend>
+       </select>
+    </fieldset>
+    
+    <body>
+
+    <p>Stock values for 1 minute are listed below:</p>
+{% block content %}
+{{stockdata.to_html() | safe}}
+{% endblock %}
+
+
+     </fieldset>
+     <input type="submit" value="Submit" id="submit"/>
+
+ </body>
+ </html>
